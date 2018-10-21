@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Stone Blog</title>
+    <link>https://ZYStone.github.io/post/</link>
+    <description>Recent content in Posts on Stone Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 20 Oct 2018 11:44:54 +0800</lastBuildDate>
+    
+	<atom:link href="https://ZYStone.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Review Pii</title>
+      <link>https://ZYStone.github.io/post/review-pii/</link>
+      <pubDate>Sat, 20 Oct 2018 11:44:54 +0800</pubDate>
+      
+      <guid>https://ZYStone.github.io/post/review-pii/</guid>
+      <description> Privacy and Secruity: Myths and Fallacies of &amp;lsquo;Personally Identifiable Information&amp;rsquo; 阅读笔记 一句话总结 传统隐私保护方法中大量使用甚至依赖的PII(Personally Identifiable Information)的定义在如今越来越复杂、越难以预估的攻击手段下的意义十分有限，基于传统PII的方案所提供的所谓安全性也很难有效保证。隐私安全从业者必须改变这一套基于传统PII定义的去识别化(De-identification)的思维方式，才有可能抵抗住不断涌现的新一代的隐私攻击。
+几个重点&amp;amp;思考  无论从什么角度，PII都很难准确的定义。事实上，所有可以将一个人从其他人中区分开来的数据都可以算作PII，PII与非PII数据之间并没有明显的界限，甚至可以说，任何数据都有可能成为PII。比如一个人某天所穿的衣服，单独来看这个信息也许并不能算作PII，但假如攻击者积累了这个人连续一周所穿的衣服，那么这个序列信息的组合很可能就能区分出绝大多数人，从而成为PII。
+ 而目前大多数公司或机构发布用户数据的现状是，事先假设PII是一个定集，并给定这个集合，基于这个集合再使用一些去识别化的方法进行处理，最终发布所谓的「安全的数据」，就高枕无忧了。这种隐私保护的方法现如今甚至可以说是自欺欺人。首先，如第一点所说，PII是一个固定不变的集合这个假设就不成立；其次，大多数方法都只考虑了数据本身，而不考虑数据发布后的用途和可能面临的威胁，事实上，像基于k-匿名的一类方法往往都会事先将假设攻击者所拥有的背景知识限定在某个范围内，但这些假设在如今公开信息指数级增多的背景下很难有说服力，攻击者所拥有的背景知识永远是越来越多的，利用额外的数据进行链接攻击是隐私保护技术的一个巨大的威胁。
+ 重识别攻击的手段越来越丰富，尤其在大数据时代，只要某类具有意义的数据足够多，那么这类数据都可能被成功用于重识别攻击。
+ 相比于传统的k-匿名等技术，DP（Differential Privacy）算是走在了正确的道路上。简要来说，DP比起之前的隐私保护技术，最大的贡献是以数学的形式严格定义一个隐私保护方法到底保护了什么，达到了什么程度，也顺便从之前所追求的不可识别性，转向了不可区分性（indistinguishability），更是和严谨的密码学走的更近了一些。
+ 互动式(interactive)的解决方案很多情况下要比one-time release的方案更有优势，应用范围更大。当然，这两种方案各有优势，选择哪种需要看具体的应用场景。就DPM（Differentially Private Mechanism）来说，one-time release可以针对数据整体精确的制定$budget$ 使用策略，可以根据数据持有者的意愿只发布特定形式的数据，而由于post-processing不会减弱经过DPM处理的数据的隐私保护等级，这种方案可以算是发布完就可以「撒手不管」了。不过，虽然DPM理论上可以在攻击者具有任何程度的背景知识的假设下都有效，攻击者总会找到漏洞和方法来减弱隐私保护的程度。比如，DP的定义中有一个隐含的条件，即各个record之间是独立没有联系的，而利用record之间的相关性，攻击者可以使DPM达不到预期的隐私保护程度。
+ 就像PII与非PII之间没有严格的界限，隐私保护想要保护的敏感信息和非敏感信息之间难道就有严格的界限吗？比如，一个数据集，其中每个record记录了用户的年龄，性别，住址，职业，工龄，学校，年收入，这其中，假如用户授权了持有者可以随意使用除年收入这一项之外的数据，觉得这些数据无所谓隐私，而年收入则必须要保密。这种情况中，持有者就真的可以无忧使用其他数据了吗？我不这么认为，其实拥有了性别、职业、工龄、学校等看似非敏感信息，可以有很高的概率预测出这个人的年收入。换种说法，record的不同属性之间很可能是存在相关性的。如同前文所说，有文献利用record之间的相关性成功攻击了DPM，利用record自身属性之间的相关性也可能对隐私保护技术产生威胁。
+ 总之，即使有了DP这样走在正确方向上的技术，当代的隐私保护仍有很长的路要走，需要考虑完善的点仍有很多……
+  </description>
+    </item>
+    
+  </channel>
+</rss>
